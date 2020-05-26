@@ -16,7 +16,7 @@ h1 {
 	text-align: center;
 	margin: 0;
 	padding: 20px 0;
-	color: white;  /* Fuchsia */
+	color: black;  /* Fuchsia */
 }
 
 img {
@@ -26,7 +26,7 @@ img {
 }
 
 p {
-  color: white;
+  color:black;
 }
 
 table {
@@ -36,10 +36,10 @@ table {
 
 /* Defining styling for a specific element type - each question */
 .question {
-  background-color: black;
-  color: white;
-  margin: 20px;
-  padding: 20px;
+  background-color:#cccccc;
+  color: black;
+  margin: 10px;
+  padding: 20px 50px 20px;
 }
 
 /* Defining styling for a specific element type - large block buttons */
@@ -47,8 +47,8 @@ table {
   display: block;
   width: 100%;
   border: none;
-  background-color: gray  /* yellow */
-  padding: 14px 28px;
+  background-color:gray /* yellow */
+  padding: 40px 20px 40px 20px;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
