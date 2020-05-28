@@ -1,0 +1,55 @@
+html {
+  background-color: white;
+}
+ 
+body {
+  margin: auto;
+  background-color: white;
+  width: 600px;
+  border: 2px solid black;
+  padding: 0px 150px 50px 150px;
+  
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	margin: 0;
+	padding: 20px 0;
+	color: black;  /* Fuchsia */
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  align: center;
+}
+
+p {
+  color:black;
+}
+
+table {
+	border: 1px solid black;
+	background-color: #f1f1c1;
+}
+
+/* Defining styling for a specific element type - each question */
+.question {
+  background-color:#cccccc;
+  color: black;
+  margin: 10px;
+  padding: 20px 50px 20px;
+}
+
+/* Defining styling for a specific element type - large block buttons */
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color:gray /* yellow */
+  padding: 40px 20px 40px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
