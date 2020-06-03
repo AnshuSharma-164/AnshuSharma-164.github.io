@@ -1,5 +1,12 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+}
+
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -34,4 +41,11 @@
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+/* Defining styling for a specific element with an id */
+#signature {
+  text-align: right;
+  font-style: italic;
+  font-size: 75%;
 }

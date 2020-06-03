@@ -3,9 +3,14 @@
 <head>
 	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<!-- citation: https://stackoverflow.com/questions/11996257/the-character-encoding-of-the-html-document-was-not-declared -->
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
 </head>
 
 <body>
+
+<h1>Monorail</h1>
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
@@ -18,13 +23,11 @@
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
-	Choose a Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
-    <option value="None">None</option>
-	</select>
+	Choose a Category:<br>
+	<input type="checkbox" id="dietSelect_1" name="dietSelect" value="glutenFree"> Gluten Free <br>
+	<input type="checkbox" id="dietSelect_2" name="dietSelect" value="organic"> Organic <br>
+	<input type="checkbox" id="dietSelect_1" name="dietSelect" value="vegetarian"> Vegetarian <br>
+	<button id="addPref" type="button" class="block" onclick="populateListProductChoices('displayProduct')">Add user preferences.</button>
 </div>
 
 <div id="Products" class="tabcontent">
@@ -46,5 +49,8 @@
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
 
+<footer>
+	<p id="signature">Site created by Anshu Sharma</p>	
+</footer>
 </body>
 </html>

@@ -5,41 +5,100 @@
 var products = [
 	{
 		name: "brocoli",
-		vegetarian: true,
 		glutenFree: true,
+		organic: true,
+		vegetarian: true,
 		price: 1.99
 	},
 	{
 		name: "bread",
-		vegetarian: true,
 		glutenFree: false,
+		organic: false,
+		vegetarian: true,
 		price: 2.35
 	},
 	{
 		name: "salmon",
-		vegetarian: false,
 		glutenFree: true,
+		organic: false,
+		vegetarian: false,
 		price: 10.00
+	},
+	{
+		name: "bagel",
+		glutenFree: false,
+		organic: false,
+		vegetarian: true,
+		price: 3.35
+	},
+	{
+		name: "burger patties",
+		glutenFree: true,
+		organic:false,
+		vegetarian: false,
+		price: 8.85
+	},
+	{
+		name: "apple",
+		glutenFree: true,
+		organic: false,
+		vegetarian: true,
+		price: 0.99
+	},
+	{
+		name: "vanilla ice cream",
+		glutenFree: true,
+		organic: true,
+		vegetarian: true,
+		price: 9.99
+	},
+	{
+		name: "strawberry",
+		glutenFree: true,
+		organic: false,
+		vegetarian: true,
+		price: 1.05
+	},
+	{
+		name: "milk",
+		glutenFree: true,
+		organic: false,
+		vegetarian: true,
+		price: 3.00
+	},
+	{
+		name: "bacon",
+		glutenFree: true,
+		organic: true,
+		vegetarian: false,
+		price: 7.75
 	}
 ];
 	
-
+function itemFitsRestrictions(item, restrictions){
+	var bool = true;
+	if ((item.glutenFree == false) && restrictions[0].checked){
+		bool = false;
+	}
+	if ((item.organic == false) && restrictions[1].checked){
+		bool = false;
+	}
+	if ((item.vegetarian == false) && restrictions[2].checked){
+		bool = false;
+	}
+	return bool;
+}
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+function restrictListProducts(prods, restrictions) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+		if(itemFitsRestrictions(prods[i],restrictions)){
+			product_names.push(prods[i].name+" $"+prods[i].price);
 		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
+
 	}
 	return product_names;
 }
