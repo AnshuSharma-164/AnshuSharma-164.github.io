@@ -4,7 +4,7 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "broccoli",
 		glutenFree: true,
 		organic: true,
 		vegetarian: true,
@@ -18,18 +18,18 @@ var products = [
 		price: 2.35
 	},
 	{
-		name: "salmon",
-		glutenFree: true,
-		organic: false,
-		vegetarian: false,
-		price: 10.00
-	},
-	{
 		name: "bagel",
 		glutenFree: false,
 		organic: false,
 		vegetarian: true,
 		price: 3.35
+	},
+	{
+		name: "salmon",
+		glutenFree: true,
+		organic: false,
+		vegetarian: false,
+		price: 10.00
 	},
 	{
 		name: "burger patties",
@@ -39,18 +39,18 @@ var products = [
 		price: 8.85
 	},
 	{
+		name: "bacon",
+		glutenFree: true,
+		organic: true,
+		vegetarian: false,
+		price: 7.75
+	},
+	{
 		name: "apple",
 		glutenFree: true,
 		organic: false,
 		vegetarian: true,
 		price: 0.99
-	},
-	{
-		name: "vanilla ice cream",
-		glutenFree: true,
-		organic: true,
-		vegetarian: true,
-		price: 9.99
 	},
 	{
 		name: "strawberry",
@@ -67,11 +67,11 @@ var products = [
 		price: 3.00
 	},
 	{
-		name: "bacon",
+		name: "vanilla ice cream",
 		glutenFree: true,
 		organic: true,
-		vegetarian: false,
-		price: 7.75
+		vegetarian: true,
+		price: 9.99
 	}
 ];
 	
@@ -96,7 +96,7 @@ function restrictListProducts(prods, restrictions) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if(itemFitsRestrictions(prods[i],restrictions)){
-			product_names.push(prods[i].name+" $"+prods[i].price);
+			product_names.push([prods[i].name, prods[i].price]);
 		}
 
 	}

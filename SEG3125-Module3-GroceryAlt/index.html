@@ -10,48 +10,63 @@
 
 <body>
 
-<h1>Monorailv2</h1>
+<h1>Monorail v2</h1>
 
 <!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
+<!--<div class="tab">
   <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
-</div>
+</div>-->
 
 <!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
+<button class="accordion">Client</button>
+<div id="Client" class="panel">
+  <h3>Customer Preferences</h3>
   <p>Tell us a bit about you.</p>
-	Choose a Category:<br>
-	<input type="checkbox" id="dietSelect_1" name="dietSelect" value="glutenFree"> Gluten Free <br>
-	<input type="checkbox" id="dietSelect_2" name="dietSelect" value="organic"> Organic <br>
+	What are your dietary needs:<br>
+	<input type="checkbox" id="dietSelect_1" name="dietSelect" value="glutenFree"> Gluten Free Diet<br>
+	<input type="checkbox" id="dietSelect_2" name="dietSelect" value="organic"> Organic Diet<br>
 	<input type="checkbox" id="dietSelect_1" name="dietSelect" value="vegetarian"> Vegetarian <br>
 	<button id="addPref" type="button" class="block" onclick="populateListProductChoices('displayProduct')">Add user preferences.</button>
 </div>
 
-<div id="Products" class="tabcontent">
-	<!--
+<button class="accordion">Products</button>
+<div id="Products" class="panel">
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
 	 Choose items to buy:
-	-->
-	 <div id="displayProduct" class="itemTab"></div>
-	 <!--
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
-	</button>
--->
+	 <div id="displayProduct"></div>
 </div>
 
-<div id="Cart" class="tabcontent">
+<button class="accordion">Cart</button>
+<div id="Cart" class="panel">
   <h3>Cart</h3>
-  <p>Here is your cart.</p>
+  <p>Here are your iterms.</p>
+  You have selected these items
   <div id="displayCart"></div>
+  <button onclick="getPrice()">Refresh total cost.</button>
+  <div id="cost"></div>
 </div>
 
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
 <footer>
 	<p id="signature">Site created by Anshu Sharma</p>	

@@ -21,26 +21,6 @@ function openInfo(evt, tabName) {
 	evt.currentTarget.className += " active";
 
 }
-
-function openItemInfo(evt, tabName) {
-
-	// Get all elements with class="tabcontent" and hide them
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	}
-
-	// Get all elements with class="tablinks" and remove the class "active"
-	tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-
-	// Show the current tab, and add an "active" class to the button that opened the tab
-	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
-
-}
 	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -62,21 +42,58 @@ function populateListProductChoices(slct1) {
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
-		var productName = optionArray[i];
+		var productName = optionArray[i][0];
 		// create the checkbox and add in HTML DOM
-		var checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
-		checkbox.name = "product";
-		checkbox.value = productName;
+		//var checkbox = document.createElement("input");
+		//checkbox.type = "checkbox";
+		//checkbox.name = "product";
+		//checkbox.value = productName;
 		//s1.appendChild(checkbox);
-		
+
+		if(i==0){
+			var h4 = document.createElement("h4")
+			h4.appendChild(document.createTextNode("Vegetables:"));
+			s1.appendChild(h4);
+		}
+		if(i==1){
+			var h4 = document.createElement("h4")
+			h4.appendChild(document.createTextNode("Grains:"));
+			s1.appendChild(h4);
+		}
+		if(i==3){
+			var h4 = document.createElement("h4")
+			h4.appendChild(document.createTextNode("Meats:"));
+			s1.appendChild(h4);
+		}
+		if(i==6){
+			var h4 = document.createElement("h4")
+			h4.appendChild(document.createTextNode("Fruits:"));
+			s1.appendChild(h4);
+		}
+		if(i==8){
+			var h4 = document.createElement("h4")
+			h4.appendChild(document.createTextNode("Dairy:"));
+			s1.appendChild(h4);
+		}
+
+		var button = document.createElement("button");
+		button.appendChild(document.createTextNode("add"));
+		button.setAttribute("onclick",'selectItem("'+productName+'","'+optionArray[i][1]+'");');
+		s1.appendChild(button);
 		// create a label for the checkbox, and also add in HTML DOM
-		var button = document.createElement("button")
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		button.class = "tablinks";
-		button.appendChild(document.createTextNode(productName));
-		s1.appendChild(button);
+		label.appendChild(document.createTextNode(productName+" $"+optionArray[i][1]));
+		s1.appendChild(label);
+
+		s1.appendChild(document.createElement("br"));
+		var image = document.createElement("img");
+		image.setAttribute("src", "images/"+productName+".png");
+ 		image.setAttribute("width", "195");
+  		image.setAttribute("height", "195");
+  		image.setAttribute("alt", productName); 
+		s1.appendChild(image);
+
 		
 		// create a breakline node and add in HTML DOM
 		s1.appendChild(document.createElement("br"));    
@@ -111,4 +128,21 @@ function selectedItems(){
 	c.appendChild(para);
 	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
 		
+}
+
+var price = 0.0;
+function selectItem(name , cost){
+	var ele = document.getElementsByName("product");
+
+	var c = document.getElementById('displayCart');
+	c.appendChild(document.createTextNode(name+" $"+cost));
+	c.appendChild(document.createElement("br"));
+	price += parseFloat(cost);
+	console.log(price);
+}
+
+function getPrice(){
+	var c = document.getElementById("cost");
+	c.innerHTML = "";
+	c.appendChild(document.createTextNode("Your total cost is $"+price));
 }
