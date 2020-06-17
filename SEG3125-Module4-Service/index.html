@@ -32,11 +32,13 @@
     <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
-    <div class="container-fluid p-3 my-3 border bg-dark text-white">
-        <img class="pull-left" src="images/bike.png">
-        <h1>Bikey Shop</h1>
-        <p>We'll take care of your hair!</p>
+    <!-- img soure: https://www.flaticon.com/free-icon/bycicle_2906741?term=bike&page=1&position=2 -->
+    <div class="container-fluid p-3 my-3 border bg-info text-black text-center">
+        <img src="images/bike.png" alt="logo" width="200" height="200">
+        <h1>Bike Shop</h1>
+        <p>First class bike service.</p>
     </div>
+
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
     <div class="alert alert-danger alert-dismissible">
@@ -44,65 +46,57 @@
         <strong>COVID-19 Alert: </strong>Due to COVID-19 the bike shop will be closed for the forseeable future.
     </div>
 
-    <!-- When you have messages to tell, remember that center align is not always the best choice -->
-    <div class="container-sm p-3 my-3 border bg-light text-success">
-        <h3>Let us tell you about our expertise</h3>
-        <p>We can <mark>cut hair</mark></p>
-        <p class="text-center" >Align wheels</p>
-        <p class="text-uppercase">Write in uppercase</p>
-        <p class="text-center text-uppercase" >centered and uppercase</p>
+    <!-- Bootstrap has a map component:https://mdbootstrap.com/docs/jquery/javascript/google-maps/-->
+    <!-- Google API was used to retrieve the map -->
+    <div class="container text-center">
+        <h2>Our Location.</h2>
+        <p>Come visit us :)</p> 
+        <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe width="800" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=501%20Rideau%20St%2C%20Ottawa%2C%20Ontario%2C%20Canada&key=AIzaSyBqvShm1EQyx9wHxwvQvaY04RWDmoQDnHQ" allowfullscreen></iframe>
+        </div>
     </div>
-
 
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
-    <div class="container">
-        <h2>Service description</h2>
-        <p>Here is a list of services offered</p>            
-        <table class="table table-primary table-hover">
+    <div class="container text-center">
+        <h2>Our Services.</h2>
+        <p>Hope we can help you!</p>            
+        <table class="table table-info table-hover">
             <thead>
             <tr>
                 <th>Service</th>
                 <th>Description</th>
+                <th>Price</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Haircut</td>
-                <td>Bla bla</td>
+                <td>Tire replacement</td>
+                <td>Replaces the bike's wheel and tire.</td>
+                <td>$125.00</td>
             </tr>
             <tr>
-                <td>Drying</td>
-                <td>Bla bla</td>
+                <td>Chain replacement</td>
+                <td>Replacesthe bike's chain and gear system.</td>
+                <td>$200.00</td>
             </tr>
             <tr>
-                <td>Coloring</td>
-                <td>Bla bla</td>
+                <td>Hydro Dip Paint Job</td>
+                <td>Hydro dip the bike's frame.</td>
+                <td>$500.00</td>
             </tr>
             </tbody>
         </table>
     </div>
 
-
-    <!-- You'll certainly need buttons at some point in your site -->
-    <!-- https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp -->
-    <!-- Remember how we talked about choosing a hue and changing the saturation for active/inactive -->
-    <!-- This idea is already part of the components in Bootstrap -->
-    <div class="container">
-        <h2>Button States</h2>
-        <button type="button" class="btn btn-warning">Primary Button</button>
-        <button type="button" class="btn btn-warning active">Active Primary</button>
-        <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
-    </div>
-
-
     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
-    <div class="container">
-        <h2>Modal Example</h2>
+    <div class="container text-center">
+        <h2>Lets Work Together.</h2>
+        <p>Set an appointment with us!</p>
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Schedule a Servicing</button>
           
         <!-- Modal -->
         <div class="modal fade" id="mySurvey" role="dialog">
@@ -114,23 +108,39 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <h2>How did you hear about us?</h2>
-                        <p>Tell us:</p>
+                        <h2>Schedule an appointment:</h2>
+                        <br>
                         <form>
+                          What service would you like:
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 1</label>
+                            <label><input type="checkbox" id="service" value="wheel"> Wheel Replacement</label>
                           </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 2</label>
+                            <label><input type="checkbox" id="service" value="chain"> Chain Replacement</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" id="service" value="paint"> Hydro Dip Paint Job</label>
+                          </div>
+                          <br>
+                          What time can you meet with us?
+                          <div class="date">
+                              <label>Date: <input type="date" name="appointment"></label>
+                          </div>
+                          <br>
+                          What is your contact information?
+                          <div class="contact">
+                              <label>Email: <input type="email" name="email"></label><br>
+                              <label>Name: <input type="text" name="name"></label>
                           </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>     
-        </div>
+            </div>
         </div>    
     </div>
 
@@ -138,49 +148,40 @@
     <!-- Card columns allows multiple cards next to each other -->
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
-    <div class="container p-3">
-        <h2>Meet our hairdressers</h2>
+    <!-- img 1:https://cdn.bulbagarden.net/upload/6/66/Diamond_Pearl_Lucas.png -->
+    <!-- img 2:https://cdn.bulbagarden.net/upload/1/1c/Diamond_Pearl_Dawn.png -->
+    <!-- img 3:https://cdn.bulbagarden.net/upload/0/01/Diamond_Pearl_Barry.png -->
+    <div class="container p-3 text-center justify-content-center">
+        <h2>Meet our mechanics</h2>
+        <p>Our team is happy to help!</p>
+        <div class="row justify-content-center">
         <div class="card-columns">
-            <div class="card bg-warning" style="width:200px">
-                <img class="card-img-top" src="images/Jule.jpg" alt="Card image" style="width:100%">
+            <div class="card bg-info" style="width:300px">
+                <img class="card-img-top" src="images/Diamond_Pearl_Lucas.png" alt="Card image" width="275" height="640">
                 <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">Jules has been cutting hair for 10 years.</p>
+                    <h4 class="card-title">Lucus</h4>
+                    <p class="card-text">Lucus loves to help and has a vast knowledge on bicylces.</p>
                     <a href="#" class="btn btn-primary">See Profile</a>
                 </div>
             </div>
-            <div class="card bg-danger" style="width:200px">
-                <img class="card-img-top" src="images/Jule.jpg" alt="Card image" style="width:100%">
+            <div class="card bg-info" style="width:300px">
+                <img class="card-img-top" src="images/Diamond_Pearl_Dawn.png" alt="Card image" width="358" height="640">
                 <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">The curly hair specialist</p>
-                    <!-- collapsible part -->
-                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
-                    <div id="profile" class="collapse p-3">
-                        <p>Jules has been cutting hair for 10 years ... </p>
-                    </div>
+                    <h4 class="card-title">Dawn</h4>
+                    <p class="card-text">Dawn is a fitness enthusiast with strong technical knowledge.</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+            <div class="card bg-info" style="width:300px">
+                <img class="card-img-top" src="images/Diamond_Pearl_Barry.png" alt="Card image" width="251" height="640">
+                <div class="card-body">
+                    <h4 class="card-title">Barry</h4>
+                    <p class="card-text">Barry is a competitive cyclist for 4 years.</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <!-- A different approach would be to make the whole staff information collapsible -->
-    <!-- Here a block button (taking the full width) opens/closes the collapsible -->
-    <!-- Here a single card is used, but card columns could be used -->
-    <div class="container">
-        <h2>More information</h2>
-        <a href="#mechanics" class="btn btn-primary btn-block" data-toggle="collapse">Meet our mechanics</a>
-        <div id="mechanics" class="collapse">
-            <div class="card bg-warning" style="width:200px">
-                <img class="card-img-top" src="images/Erwind.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Erwind</h4>
-                    <p class="card-text">Erwind knows all about bikes.</p>
-                </div>
-            </div>
         </div>
     </div>
-
 </body>
 </html>
