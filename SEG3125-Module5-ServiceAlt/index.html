@@ -10,7 +10,7 @@
 
 <!-- The head should contain an appropriate title for your site -->
 <head>
-    <title>Module 4 - Labo</title>
+    <title>Module 5 - Labo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +19,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -33,11 +40,38 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     <!-- img soure: https://www.flaticon.com/free-icon/bycicle_2906741?term=bike&page=1&position=2 -->
-    <div class="container-fluid p-3 my-3 border bg-info text-black text-center">
-        <img src="images/bike.png" alt="logo" width="200" height="200">
-        <h1>Bike Shop</h1>
-        <p>First class bike service.</p>
+    <div class="container-fluid p-3 my-3 text-black text-center">
+        <img src="images/bike.png" alt="logo" width="150" height="150">
     </div>
+
+    <!-- Using the collapsible Navbar, so we see the hamburger menu icon -->
+    <!-- It really has become a standard. -->
+    <!-- As your page is a vertical page (Module 4 requirement), you mus use the navbar -->
+    <!-- to just jump to parts of the page. What I put as First/Second/Third here would -->
+    <!-- be sections in your page. -->
+    <nav class="navbar navbar-expand-md bg-info navbar-light">
+        <a class="navbar-brand" href="#">Bike Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#Location"><img src="images/map.png" alt="logo" style="width:30px;"> Location</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#Services"><img src="images/service.png" alt="logo" style="width:30px;"> Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Mechanics"><img src="images/mechanic.png" alt="logp" style="width:30px;"> Mechanics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Appointment"><img src="images/calendar.png" alt="logo" style="width:30px;"> Schedule</a>
+                </li>   
+            </ul>
+        </div>  
+    </nav>
+    <br>
 
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
@@ -48,7 +82,7 @@
 
     <!-- Bootstrap has a map component:https://mdbootstrap.com/docs/jquery/javascript/google-maps/-->
     <!-- Google API was used to retrieve the map -->
-    <div class="container text-center">
+    <div class="container text-center" id="Location">
         <h2>Our Location.</h2>
         <p>Come visit us :)</p> 
         <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
@@ -58,72 +92,163 @@
 
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
-    <div class="container text-center">
+    <div class="container text-center" id="Services">
         <h2>Our Services.</h2>
         <p>Hope we can help you!</p>            
         <table class="table table-info">
             <thead>
-            <tr>
-                <th>Images</th>
-                <th>Service</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
+                <tr>
+                    <th>Images</th>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><img src="images/bikewheel.jpg" width="200" height="150"></td>
-                <td>Tire replacement</td>
-                <td>Replaces the bike's wheel and tire.</td>
-                <td>$125.00</td>
-            </tr>
-            <tr>
-                <td><img src="images/bikechain.jpg" width="200" height="150"></td>
-                <td>Chain replacement</td>
-                <td>Replaces the bike's chain and gear system.</td>
-                <td>$200.00</td>
-            </tr>
-            <tr>
-                <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
-                <td>Hydro Dip Paint Job</td>
-                <td>Hydro dip the bike's frame.</td>
-                <td>$500.00</td>
-            </tr>
+                <tr>
+                    <th>repairs and services</th>
+                </tr>
+                <tr>
+                    <td><img src="images/bikewheel.jpg" width="200" height="150"></td>
+                    <td>Tire replacement</td>
+                    <td>Replaces the bike's wheel and tire.</td>
+                    <td>$125.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/bikechain.jpg" width="200" height="150"></td>
+                    <td>Chain replacement</td>
+                    <td>Replaces the bike's chain and gear system.</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/brake.jpg" width="200" height="150"></td>
+                    <td>Brake replacement</td>
+                    <td>Replaces the brake and hydraulic system.</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/bikechain.jpg" width="200" height="150"></td>
+                    <td>Tune Up</td>
+                    <td>Replaces the bike's chain and gear system.</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <th>custimization</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td>Hydro Dip Paint Job</td>
+                    <td>Hydro dip the bike's frame.</td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td>Hydro Dip Paint Job</td>
+                    <td>Hydro dip the bike's frame.</td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td>Rear Rack Installation</td>
+                    <td>Hydro dip the bike's frame.</td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td>Child Seat Installation</td>
+                    <td>Hydro dip the bike's frame.</td>
+                    <td>$500.00</td>
+                </tr>
             </tbody>
         </table>
+    </div>
+
+
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <!-- img 1:https://cdn.bulbagarden.net/upload/6/66/Diamond_Pearl_Lucas.png -->
+    <!-- img 2:https://cdn.bulbagarden.net/upload/1/1c/Diamond_Pearl_Dawn.png -->
+    <!-- img 3:https://cdn.bulbagarden.net/upload/0/01/Diamond_Pearl_Barry.png -->
+    <div class="container p-3 text-center justify-content-center" id="Mechanics">
+        <h2>Meet our mechanics</h2>
+        <p>Our team is happy to help!</p>
+        <div class="row justify-content-center">
+            <div class="card-columns">
+                <div class="card bg-info" style="width:300px">
+                    <img class="card-img-top" src="images/Diamond_Pearl_Lucas.png" alt="Card image" width="275" height="640">
+                    <div class="card-body">
+                        <h4 class="card-title">Lucas</h4>
+                        <p class="card-text">Lucas loves to help and has a vast knowledge on bicylces.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card bg-info" style="width:300px">
+                    <img class="card-img-top" src="images/Diamond_Pearl_Dawn.png" alt="Card image" width="358" height="640">
+                    <div class="card-body">
+                        <h4 class="card-title">Dawn</h4>
+                        <p class="card-text">Dawn is a fitness enthusiast with strong technical knowledge.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card bg-info" style="width:300px">
+                    <img class="card-img-top" src="images/Diamond_Pearl_Barry.png" alt="Card image" width="251" height="640">
+                    <div class="card-body">
+                        <h4 class="card-title">Barry</h4>
+                        <p class="card-text">Barry is a competitive cyclist for 4 years.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
-    <div class="container text-center">
+    <div class="container text-center" id="Appointment">
         <h2>Lets Work Together.</h2>
         <p>Set an appointment with us!</p>
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Schedule a Servicing</button>
-          
+
         <!-- Modal -->
         <div class="modal fade" id="mySurvey" role="dialog">
             <div class="modal-dialog">  
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <h2>Schedule an appointment:</h2>
-                        <br>
-                        <form>
-                          What service would you like:
-                          <div class="checkbox">
-                            <label><input type="checkbox" id="service" value="wheel"> Wheel Replacement</label>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <h2>Schedule an appointment:</h2>
+                            <br>
+                            <form>
+                              What service would you like?
+                              <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="wheel"> Wheel Replacement</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="chain"> Chain Replacement</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="paint"> Hydro Dip Paint Job</label>
+                            </div>
+                            <br>
+                            Which mechanic would you like to choose to work with?
+                            <div class="radio">
+                              <label><input type="radio" id="mechanic" name="mechanic" value="Lucas">Lusas</label>
                           </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" id="service" value="chain"> Chain Replacement</label>
+                          <div class="radio">
+                              <label><input type="radio" id="mechanic" name="mechanic" value="Dawn">Dawn</label>
                           </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" id="service" value="paint"> Hydro Dip Paint Job</label>
+                          <div class="radio">
+                              <label><input type="radio" id="mechanic" name="mechanic" value="Berry">Berry</label>
                           </div>
                           <br>
                           What time can you meet with us?
@@ -136,57 +261,21 @@
                               <label>Email: <input type="email" name="email"></label><br>
                               <label>Name: <input type="text" name="name"></label>
                           </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>     
+                          What is your payment?
+                          <div class="creditCard">
+                              <label>Credit card number:<input type="text" name="cardNumber"></label>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-        </div>    
+        </div>     
     </div>
-
-    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
-    <!-- Card columns allows multiple cards next to each other -->
-    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
-    <!-- My second card limits the information seen and uses collapsible to show more -->
-    <!-- img 1:https://cdn.bulbagarden.net/upload/6/66/Diamond_Pearl_Lucas.png -->
-    <!-- img 2:https://cdn.bulbagarden.net/upload/1/1c/Diamond_Pearl_Dawn.png -->
-    <!-- img 3:https://cdn.bulbagarden.net/upload/0/01/Diamond_Pearl_Barry.png -->
-    <div class="container p-3 text-center justify-content-center">
-        <h2>Meet our mechanics</h2>
-        <p>Our team is happy to help!</p>
-        <div class="row justify-content-center">
-        <div class="card-columns">
-            <div class="card bg-info" style="width:300px">
-                <img class="card-img-top" src="images/Diamond_Pearl_Lucas.png" alt="Card image" width="275" height="640">
-                <div class="card-body">
-                    <h4 class="card-title">Lucas</h4>
-                    <p class="card-text">Lucas loves to help and has a vast knowledge on bicylces.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card bg-info" style="width:300px">
-                <img class="card-img-top" src="images/Diamond_Pearl_Dawn.png" alt="Card image" width="358" height="640">
-                <div class="card-body">
-                    <h4 class="card-title">Dawn</h4>
-                    <p class="card-text">Dawn is a fitness enthusiast with strong technical knowledge.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card bg-info" style="width:300px">
-                <img class="card-img-top" src="images/Diamond_Pearl_Barry.png" alt="Card image" width="251" height="640">
-                <div class="card-body">
-                    <h4 class="card-title">Barry</h4>
-                    <p class="card-text">Barry is a competitive cyclist for 4 years.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
+</div>    
+</div>
 <footer>
     <p id="signature">Site created by Anshu Sharma</p>  
 </footer>
