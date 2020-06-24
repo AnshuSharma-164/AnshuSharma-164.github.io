@@ -147,6 +147,14 @@ $(document).ready(function(){
     $("#phone").on("mouseleave", function(){
         $("#phone").removeClass("showInput");
     });
+
+    $("#dateInput").on("mouseenter", function(){
+        $("#dateInput").addClass("showInput");
+    });
+
+    $("#dateInput").on("mouseleave", function(){
+        $("#dateInput").removeClass("showInput");
+    });
   
     // https://jqueryui.com/tooltip/ 
     // The class "highlight" used here is predefined in JQuery UI
