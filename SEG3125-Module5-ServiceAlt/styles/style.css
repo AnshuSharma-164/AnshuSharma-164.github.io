@@ -10,6 +10,23 @@ h1 {
   
 }
 
+/*https://stackoverflow.com/questions/25874001/how-to-put-scroll-bar-only-for-modal-body*/
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 75vh;
+    overflow-y: auto;
+}
+
+.error {
+  background-color: pink;
+}
+
+.showInput {
+  background-color: #bee5eb;
+}
+
 /* Defining styling for a specific element with an id */
 #signature {
   text-align: right;

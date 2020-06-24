@@ -27,6 +27,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- Your own script -->
+    <script src="scripts/service.js"></script>
+
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -63,7 +66,7 @@
                     <a class="nav-link" href="#Services"><img src="images/service.png" alt="logo" style="width:30px;"> Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Mechanics"><img src="images/mechanic.png" alt="logp" style="width:30px;"> Mechanics</a>
+                    <a class="nav-link" href="#Mechanics"><img src="images/worker.png" alt="logp" style="width:30px;"> Mechanics</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Appointment"><img src="images/calendar.png" alt="logo" style="width:30px;"> Schedule</a>
@@ -83,6 +86,8 @@
     <!-- Bootstrap has a map component:https://mdbootstrap.com/docs/jquery/javascript/google-maps/-->
     <!-- Google API was used to retrieve the map -->
     <div class="container text-center" id="Location">
+        <img src="">
+        <img src="images/map.png" alt="logo" style="width:60px;">
         <h2>Our Location.</h2>
         <p>Come visit us :)</p> 
         <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
@@ -93,6 +98,7 @@
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container text-center" id="Services">
+        <img src="images/service.png" alt="logo" style="width:60px;">
         <h2>Our Services.</h2>
         <p>Hope we can help you!</p>            
         <table class="table table-info">
@@ -118,19 +124,19 @@
                     <td><img src="images/bikechain.jpg" width="200" height="150"></td>
                     <td>Chain replacement</td>
                     <td>Replaces the bike's chain and gear system.</td>
-                    <td>$200.00</td>
+                    <td>$150.00</td>
                 </tr>
                 <tr>
                     <td><img src="images/brake.jpg" width="200" height="150"></td>
                     <td>Brake replacement</td>
                     <td>Replaces the brake and hydraulic system.</td>
-                    <td>$200.00</td>
+                    <td>$100.00</td>
                 </tr>
                 <tr>
-                    <td><img src="images/bikechain.jpg" width="200" height="150"></td>
+                    <td><img src="images/bike.jpg" width="200" height="150"></td>
                     <td>Tune Up</td>
-                    <td>Replaces the bike's chain and gear system.</td>
-                    <td>$200.00</td>
+                    <td>Tune up the bike.</td>
+                    <td>$50.00</td>
                 </tr>
                 <tr>
                     <th>custimization</th>
@@ -145,22 +151,22 @@
                     <td>$500.00</td>
                 </tr>
                 <tr>
-                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
-                    <td>Hydro Dip Paint Job</td>
-                    <td>Hydro dip the bike's frame.</td>
-                    <td>$500.00</td>
+                    <td><img src="images/bikeLED.jpg" width="200" height="150"></td>
+                    <td>Light Installations</td>
+                    <td>Add LED lights to bike for road safety.</td>
+                    <td>$20.00</td>
                 </tr>
                 <tr>
-                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td><img src="images/bikerack.jpg" width="200" height="150"></td>
                     <td>Rear Rack Installation</td>
-                    <td>Hydro dip the bike's frame.</td>
-                    <td>$500.00</td>
+                    <td>Add rear rack to the bike.</td>
+                    <td>$40.00</td>
                 </tr>
                 <tr>
-                    <td><img src="images/bikeframe.jpg" width="200" height="150"></td>
+                    <td><img src="images/bikeseat.jpg" width="200" height="150"></td>
                     <td>Child Seat Installation</td>
                     <td>Hydro dip the bike's frame.</td>
-                    <td>$500.00</td>
+                    <td>$80.00</td>
                 </tr>
             </tbody>
         </table>
@@ -175,6 +181,7 @@
     <!-- img 2:https://cdn.bulbagarden.net/upload/1/1c/Diamond_Pearl_Dawn.png -->
     <!-- img 3:https://cdn.bulbagarden.net/upload/0/01/Diamond_Pearl_Barry.png -->
     <div class="container p-3 text-center justify-content-center" id="Mechanics">
+        <img src="images/worker.png" alt="logo" style="width:60px;">
         <h2>Meet our mechanics</h2>
         <p>Our team is happy to help!</p>
         <div class="row justify-content-center">
@@ -184,6 +191,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Lucas</h4>
                         <p class="card-text">Lucas loves to help and has a vast knowledge on bicylces.</p>
+                        <p class="card-text">Tuesday to Saturday</p>
                         <a href="#" class="btn btn-primary">See Profile</a>
                     </div>
                 </div>
@@ -192,6 +200,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Dawn</h4>
                         <p class="card-text">Dawn is a fitness enthusiast with strong technical knowledge.</p>
+                        <p class="card-text">Monday to Friday</p>
                         <a href="#" class="btn btn-primary">See Profile</a>
                     </div>
                 </div>
@@ -200,6 +209,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Barry</h4>
                         <p class="card-text">Barry is a competitive cyclist for 4 years.</p>
+                        <p class="card-text">Tuesday to Friday</p>
                         <a href="#" class="btn btn-primary">See Profile</a>
                     </div>
                 </div>
@@ -211,6 +221,7 @@
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
     <div class="container text-center" id="Appointment">
+        <img src="images/calendar.png" alt="logo" style="width:60px;">
         <h2>Lets Work Together.</h2>
         <p>Set an appointment with us!</p>
         <!-- Trigger the modal with a button -->
@@ -229,6 +240,8 @@
                             <h2>Schedule an appointment:</h2>
                             <br>
                             <form>
+                              <img src="images/service.png" alt="logo" style="width:30px;">
+                              <br>
                               What service would you like?
                               <div class="checkbox">
                                 <label><input type="checkbox" id="service" value="wheel"> Wheel Replacement</label>
@@ -237,43 +250,68 @@
                                 <label><input type="checkbox" id="service" value="chain"> Chain Replacement</label>
                             </div>
                             <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="break"> Break Replacement</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="tuneUp"> Tune up</label>
+                            </div>
+                            <div class="checkbox">
                                 <label><input type="checkbox" id="service" value="paint"> Hydro Dip Paint Job</label>
                             </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="light"> LED light Installation</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="rack"> Rack Installation</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="service" value="seat"> Seat Installation</label>
+                            </div>
+                            <br>
+                            <img src="images/worker.png" alt="logo" style="width:30px;">
                             <br>
                             Which mechanic would you like to choose to work with?
                             <div class="radio">
-                              <label><input type="radio" id="mechanic" name="mechanic" value="Lucas">Lusas</label>
+                              <label><input type="radio" id="mechanic_0" name="mechanic" value="Lucas">Lusas</label>
                           </div>
                           <div class="radio">
-                              <label><input type="radio" id="mechanic" name="mechanic" value="Dawn">Dawn</label>
-                          </div>
-                          <div class="radio">
-                              <label><input type="radio" id="mechanic" name="mechanic" value="Berry">Berry</label>
-                          </div>
-                          <br>
-                          What time can you meet with us?
-                          <div class="date">
-                              <label>Date: <input type="date" name="appointment"></label>
-                          </div>
-                          <br>
-                          What is your contact information?
-                          <div class="contact">
-                              <label>Email: <input type="email" name="email"></label><br>
-                              <label>Name: <input type="text" name="name"></label>
-                          </div>
-                          What is your payment?
-                          <div class="creditCard">
-                              <label>Credit card number:<input type="text" name="cardNumber"></label>
-                          </div>
-                      </form>
-                  </div>
+                           <label><input type="radio" id="mechanic_1" name="mechanic" value="Dawn">Dawn</label>
+                       </div>
+                       <div class="radio">
+                          <label><input type="radio" id="mechanic_2" name="mechanic" value="Berry">Berry</label>
+                      </div>
+                      <br>
+                      <img src="images/calendarEntry.png" alt="logo" style="width:30px;">
+                      <br>
+                      What time can you meet with us?
+                      <div class="date">
+                          <label>Date: <input type="text" id="dateInput" name="appointment"></label>
+                      </div>
+                      <br>
+                      <img src="images/customer.png" alt="logo" style="width:30px;">
+                      <br>
+                      What is your contact information?
+                      <div class="contact">
+                          <label>Email: <input type="email" name="email" id="email"></label><br>
+                          <label>Name: <input type="text" name="name" id="name"></label>
+                          <label>Phone: <input type="text" name="phone" id="phone"></label>
+                      </div>
+                      <br>
+                      <img src="images/dollar.png" alt="logo" style="width:30px;">
+                      <br>
+                      What is your credit card number?
+                      <div class="creditCard">
+                          <label>Number: <input type="text" name="credit" id="credit" title="If you fail to make your schedule appointment you will be charged $20."></label>
+                      </div>
+                  </form>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>     
-    </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>     
+</div>
 </div>    
 </div>
 <footer>
