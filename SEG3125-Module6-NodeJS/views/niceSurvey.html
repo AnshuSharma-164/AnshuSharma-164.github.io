@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Questionnaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  </head>
+  
+  <body>
+	
+	<div class="container-md p-3 my-3 border bg-dark text-white" id="survey">
+    <h1>Survey</h1>
+    <a href="https://www.spacejam.com">
+      <img src="image/SpaceJam_FrontPage.png" alt="spacejam.com" width="600" height="400">
+    </a>
+    <br>
+    <form>
+      <h2> What is your contact information? </h2>
+      My first name is:<br>
+      <input type="text" name="first_name" placeholder="first name here" required />
+      <br>
+      <br>
+      My last name is:<br>
+      <input type="text" name="last_name" placeholder="last name here" required />
+      <br>
+      <br>
+      My email is:<br>
+      <input type="email" name="email" placeholder="email here" required />
+      <br>
+      <br>
+      <h2>Is the UI for spacejaml.com good?</h2>
+      <input type="radio" name="quality" value="Yes"> Yes<br>
+      <input type="radio" name="quality" value="No"> No<br>
+      <br>
+      <h2> What are the worst design chocies of this site?</h2>
+	    The worst design choice:<br>
+		  <input type="checkbox" name="design_choice" value="Colors"> The Colors<br>
+		  <input type="checkbox" name="design_choice" value="Layout"> The Layout<br>
+      <input type="checkbox" name="design_choice" value="Buttons"> The Buttons<br>
+      <input type="checkbox" name="design_choice" value="Branding"> The Branding<br>
+      <br>
+      <h2>What is the best aspect of this site?</h2>
+      The best aspect of the site is:<br>
+      <select name="aspect">
+			  <option value="Proper Functionality" selected="selected">Proper Functionality</option>
+			  <option value="Consistency">Consistency</option>
+			  <option value="Efficiency">Efficiency</option>
+        <option value="Usability">Usability</option>
+        <option value="Reliability">Reliability</option>
+        <option value="Data Integrity">Data Integrity</option>
+      </select>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-warning" id="bb">Submit</button>
+      <p id="thanks"></p>
+    </form>
+    </div>
+	<script src="/assets/action.js"></script>
+  </body>
+</html> 

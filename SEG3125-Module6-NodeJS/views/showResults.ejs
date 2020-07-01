@@ -1,0 +1,45 @@
+<html lang="en-US">
+<head>
+    <title>Survey Analysis</title>
+</head>
+
+<body>
+    <h1>Survey analysis</h1>
+    <h2>First Name</h2>
+    <ul>
+    <% for (var i=0; i<results[1].length; i++){ %>
+        <li><%= results[1][i].first_name %> :  <%= results[1][i].count %></li>
+    <% } %>    
+    </ul>
+    <h2>Last Name</h2>
+    <ul>
+    <% for (var i=0; i<results[2].length; i++){ %>
+        <li><%= results[2][i].last_name %> :  <%= results[2][i].count %></li>
+    <% } %>    
+    </ul>
+    <h2>Email</h2>
+    <ul>
+    <% for (var i=0; i<results[3].length; i++){ %>
+        <li><%= results[3][i].email %> :  <%= results[3][i].count %></li>
+    <% } %>    
+    </ul>
+    <h2>Quality</h2>
+    <ul>
+    <% for (var i=0; i<results[4].length; i++){ %>
+        <li><%= results[4][i].quality %> :  <%= results[4][i].count %></li>
+    <% } %>    
+    </ul>
+    <h2>Design Choice</h2>
+    <ul>
+    <% for (var i=0; i<results[0].length; i++){ %>
+        <li><%= results[0][i].design_choice %> :  <%= results[0][i].count %></li>
+    <% } %>    
+    </ul>
+    <h2>Aspect</h2>
+    <ul>
+    <% for (var i=0; i<results[5].length; i++){ %>
+        <li><%= results[5][i].aspect %> :  <%= results[5][i].count %></li>
+    <% } %>    
+    </ul>
+</body>
+</html>
